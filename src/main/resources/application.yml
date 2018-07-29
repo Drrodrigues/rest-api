@@ -1,0 +1,14 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      
+pollingIntervalInSeconds: 5 
+
+companies:
+  - T
+  - F
+  - AMD
+  
+debug: true
