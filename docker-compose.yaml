@@ -1,0 +1,26 @@
+version: '2'
+services:
+  mongodb:
+    container_name: mongoDatabase
+    image: mongo:3.6
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - ./data/db:/data/db
+    ports:
+        - 27017:27017
+  app:
+    restart: always
+    build: src
+    working_dir: /src
+    volumes:
+      - ./app:/app
+      - ~/.m2:/root/.m2
+    expose:
+      - "8080"
+    command: mvn clean spring-boot:run
+    environment:
+      - SPRING_DATA_MONGODB= mongodb
+    depends_on:
+      - mongodb
