@@ -26,10 +26,6 @@ import io.swagger.annotations.ApiResponse;
 @Controller
 public class StockController {
 
-	String stockURI = "https://candidate.hubteam.com/candidateTest/v3/problem/dataset?userKey=ea8a888ae2f3c8c7eb52e85ee27a";
-
-	String postURI = "https://candidate.hubteam.com/candidateTest/v3/problem/result?userKey=ea8a888ae2f3c8c7eb52e85ee27a";
-
 	private static org.slf4j.Logger LOG = LoggerFactory.getLogger(StockController.class);
 	
 	@Autowired
